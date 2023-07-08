@@ -3,16 +3,18 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package model;
+
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
+
 /**
  *
  * @author nkhan
  */
-public class Items {
-    public int ItemID;
+public class Bids {
+    public int BidID;
     public int AuctionID;
-    public String ItemName;
-    public String Description;
-    public BigDecimal CurrentBid;
-
+    public int UserID;
+    public LocalDateTime  BidTime;
+    public BigDecimal Amount;
 }

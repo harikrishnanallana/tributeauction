@@ -1,0 +1,13 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Jul 7, 2023, 9:05:14 AM
+    Author     : nkhan
+*/
+ @import url('https://fonts.googleapis.com/css?family=Merriweather');
+            .changeColor {
+                fill: #4f86ed;
+            }
+            

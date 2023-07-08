@@ -8,6 +8,6 @@ package dal;
  *
  * @author nkhan
  */
-public class ItemDao {
+public class ItemsDao {
     
 }
