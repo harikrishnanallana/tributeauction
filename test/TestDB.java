@@ -1,8 +1,7 @@
 
 
 import dal.AdminDao;
-import dal.DBconnector;
-import dal.UserDao;
+import DBconnect.DBconnector;
 import model.User;
 
 
@@ -26,7 +25,7 @@ public class TestDB {
             String error = "Incorrect information entered, please try again.";
             System.out.println(error);
         } else {
-            String message = "Welcome: " + user.FullName;
+            String message = "Welcome: " + user.Username;
             System.out.println(message);
         }
     } catch (NumberFormatException e) {
