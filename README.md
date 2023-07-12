@@ -30,6 +30,9 @@ The main goal of this project is to build an online auction website where users 
 
 6. Run the `src/DBconnect/DBconnector.java` file to initialize the database. This file will execute a batch script to create and populate the necessary database tables. Make sure to provide the correct `username` and `password` in the script. 
 
+      <img src='./images/output_buoc6.png' width=100% height=250 />
+     
+
 7. After running the script, you can run the application by selecting **Run > Run Project** or using the shortcut `F6`.
 
 ## Directory Structure
