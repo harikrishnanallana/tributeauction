@@ -13,4 +13,9 @@
         <error-code>404</error-code>
         <location>/page/error/404.html</location>
     </error-page>
+    <dependency>
+    <groupId>io.jsonwebtoken</groupId>
+    <artifactId>jjwt</artifactId>
+    <version>0.10.0</version>
+</dependency>
 </web-app>

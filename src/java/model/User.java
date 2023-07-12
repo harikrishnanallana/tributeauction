@@ -1,36 +1,21 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package model;
 
 import java.math.BigDecimal;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-/**
- *
- * @author nkhan
- */
 public class User {
 
     public int ID;
     public String Username;
     public String FullName;
     public String Password;
-    public String Role;
-    public String  Email;
+    public RoleType Role;
+    public String Email;
 
-    public String getEmail() {
-        return Email;
-    }
-
-    public void setEmail(String  Email) {
-        this.Email = Email;
-    }
-
-    public int getID() {
-        return ID;
+    public enum RoleType {
+        CLIENT,
+        ADMIN
     }
 
     public User(ResultSet rs) {
@@ -39,14 +24,14 @@ public class User {
             this.Username = rs.getString("Username");
             this.FullName = rs.getString("FullName");
             this.Password = rs.getString("Password");
-            this.Role = rs.getString("Role");
+            this.Role = RoleType.valueOf(rs.getString("Role").toUpperCase());
             this.Email = rs.getString("Email");
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
     }
 
-    public User(int ID, String Username, String FullName, String Password, String Role, String Email) {
+    public User(int ID, String Username, String FullName, String Password, RoleType Role, String Email) {
         this.ID = ID;
         this.Username = Username;
         this.FullName = FullName;
@@ -54,24 +39,25 @@ public class User {
         this.Role = Role;
         this.Email = Email;
     }
-//    check login
-    public User(int ID,String Username,String Password,String roles){
-        this.ID=ID;
-        this.Username=Username;
-        this.Password=Password;
-        this.Role=roles;
+
+    public User(int ID, String Username, String Password, RoleType Role) {
+        this.ID = ID;
+        this.Username = Username;
+        this.Password = Password;
+        this.Role = Role;
+    }
+
+    public User() {
+        this.Role = RoleType.CLIENT;
+    }
+
+    public int getID() {
+        return ID;
     }
 
     public void setID(int ID) {
         this.ID = ID;
     }
-
-    @Override
-    public String toString() {
-        return "User{" + "ID=" + ID + ", Username=" + Username + ", FullName=" + FullName + ", Password=" + Password + ", Role=" + Role + ", Email=" + Email + '}';
-    }
-
-
 
     public String getUsername() {
         return Username;
@@ -97,15 +83,35 @@ public class User {
         this.Password = Password;
     }
 
-    public String getRole() {
+    public RoleType getRole() {
         return Role;
     }
 
-    public void setRole(String Role) {
+    public void setRole(RoleType Role) {
         this.Role = Role;
     }
 
-    public User() {
+    public String getEmail() {
+        return Email;
     }
 
+    public void setEmail(String Email) {
+        this.Email = Email;
+    }
+    
+    public String RoleDefault() {
+        return RoleType.CLIENT.toString().toLowerCase();
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "ID=" + ID +
+                ", Username='" + Username + '\'' +
+                ", FullName='" + FullName + '\'' +
+                ", Password='" + Password + '\'' +
+                ", Role=" + Role +
+                ", Email='" + Email + '\'' +
+                '}';
+    }
 }

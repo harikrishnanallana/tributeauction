@@ -22,7 +22,7 @@
         <div class="container">
             <div class="forms-container">
                 <div class="signin-signup">
-                    
+                        
                     <!--Sign in block begin-->
                     <form action="LoginAction" method="post" class="sign-in-form">
                         <h2 class="title">Sign In</h2>
@@ -52,25 +52,24 @@
                             </a>
                         </div>
                     </form>
-                         <!--Sign in block end-->
-                    
+                    <!--Sign in block end-->
 
-                    <form action="SignUpAction" class="sign-up-form">
+
+                    <form action="SignUpAction" method="post" class="sign-up-form">
                         <h2 class="title">Sign Up</h2>
                         <div class="input-field">
                             <i class="fas fa-user"></i>
-                            <input type="text" placeholder="Username" id="username" name="username" />
+                            <input type="text" placeholder="Username" id="signup-username" name="username" required/>
                         </div>
                         <div class="input-field">
                             <i class="fas fa-envelope"></i>
-                            <input type="email" placeholder="Email" id="email" name="email"/>
+                            <input type="email" placeholder="Email" id="signup-email" name="email" required/>
                         </div>
                         <div class="input-field">
                             <i class="fas fa-lock"></i>
-                            <input type="password" placeholder="Password" id="password" name="password"/>
+                            <input type="password" placeholder="Password" id="signup-password" name="password" required/>
                         </div>
                         <input type="submit" value="Sign Up" class="btn solid" />
-
                         <p class="social-text">Or Sign up with social platforms</p>
                         <div class="social-media">
                             <a href="#" class="social-icon">
@@ -87,9 +86,9 @@
                             </a>
                         </div>
                     </form>
-                         
-                         
-                         
+
+
+
                 </div>
             </div>
             <div class="panels-container">
@@ -131,7 +130,7 @@
         </script>
         <style>
 
-            
+
 
             * {
                 margin: 0;

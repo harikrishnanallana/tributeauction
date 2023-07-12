@@ -1,6 +1,6 @@
 package controller;
 
-import dal.AdminDao;
+import dal.UserDao;
 import model.User;
 
 import java.io.IOException;
@@ -41,8 +41,8 @@ public class LoginAction extends HttpServlet {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
 
-        AdminDao adminDao = new AdminDao();
-        User user = adminDao.CheckUserLogin(username, password);
+        UserDao userDao = new UserDao();
+        User user = userDao.UserLogin(username, password);
 
         if (user == null) {
             String error = "Incorrect information entered, please try again.";

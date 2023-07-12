@@ -1,65 +1,116 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package dal;
 
 import DBconnect.DBconnector;
 import model.User;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.sql.Statement;
+import java.util.ArrayList;
+import model.User.RoleType;
 
-/**
- *
- * @author nkhan
- */
 public class UserDao extends DBconnector {
 
-//     Admin Command Begin
     public ArrayList<User> getUsers() {
-    ArrayList<User> list = new ArrayList<>();
-    String query = "SELECT * FROM Users;";
-    ResultSet rs = null; // Move the rs variable declaration outside the try block
+        ArrayList<User> list = new ArrayList<>();
+        String query = "SELECT * FROM Users;";
+        try {
+            Statement stm = conn.createStatement();
+            ResultSet rs = stm.executeQuery(query);
+            while (rs.next()) {
+                User user = new User(
+                        rs.getInt("UserID"),
+                        rs.getString("Username"),
+                        rs.getString("FullName"),
+                        rs.getString("Password"),
+                        RoleType.valueOf(rs.getString("Role").toUpperCase()),
+                        rs.getString("Email")
+                        
+                );
+                list.add(user);
+            }
+        } catch (SQLException ex) {
+            System.out.println("SQLException occurred: " + ex.getMessage());
+        }
+        return list;
+    }
+
+    public void saveUser(User user) {
+        String query = "INSERT INTO Users (Username, FullName, Password, Email, Role) VALUES (?, ?, ?, ?, ?);";
+        try {
+            PreparedStatement pst = conn.prepareStatement(query);
+            pst.setString(1, user.getUsername());
+            pst.setString(2, user.getFullName());
+            pst.setString(3, user.getPassword());
+            pst.setString(4, user.getEmail());
+            pst.setString(5, user.RoleDefault());
+            pst.executeUpdate();
+        } catch (SQLException ex) {
+            System.out.println("SQLException occurred: " + ex.getMessage());
+        }
+    }
+    
+       public boolean checkUsernameExists(String username) {
+        String query = "SELECT COUNT(*) FROM Users WHERE Username = ?";
+        try {
+            PreparedStatement pst = conn.prepareStatement(query);
+            pst.setString(1, username);
+            ResultSet rs = pst.executeQuery();
+            if (rs.next()) {
+                int count = rs.getInt(1);
+                return count > 0;
+            }
+        } catch (SQLException ex) {
+            System.out.println("SQLException occurred: " + ex.getMessage());
+        }
+        return false;
+    }
+       
+       public boolean checkEmailExists(String email) {
+        String query = "SELECT COUNT(*) FROM Users WHERE Email = ?";
+        try {
+            PreparedStatement pst = conn.prepareStatement(query);
+            pst.setString(1, email);
+            ResultSet rs = pst.executeQuery();
+            if (rs.next()) {
+                int count = rs.getInt(1);
+                return count > 0;
+            }
+        } catch (SQLException ex) {
+            System.out.println("SQLException occurred: " + ex.getMessage());
+        }
+        return false;
+    }
+       
+       
+       public User UserLogin(String username, String password) {
+    String query = "SELECT * FROM Users WHERE Username = ? AND Password = ?";
     try {
-        Statement stm = conn.createStatement();
-        rs = stm.executeQuery(query);
-        while (rs.next()) {
+        PreparedStatement pst = conn.prepareStatement(query);
+        pst.setString(1, username);
+        pst.setString(2, password);
+        ResultSet rs = pst.executeQuery();
+        if (rs.next()) {
             User user = new User(
                     rs.getInt("UserID"),
                     rs.getString("Username"),
                     rs.getString("FullName"),
                     rs.getString("Password"),
-                    rs.getString("Email"),
-                    rs.getString("Role")
+                    RoleType.valueOf(rs.getString("Role").toUpperCase()),
+                    rs.getString("Email")
             );
-            list.add(user);
+            return user;
         }
     } catch (SQLException ex) {
         System.out.println("SQLException occurred: " + ex.getMessage());
-        if (rs != null) {
-            try {
-                ResultSetMetaData rsmd = rs.getMetaData();
-                int columnCount = rsmd.getColumnCount();
-                System.out.println("Column names in ResultSet:");
-                for (int i = 1; i <= columnCount; i++) {
-                    String columnName = rsmd.getColumnName(i);
-                    System.out.println(columnName);
-                }
-            } catch (SQLException e) {
-                System.out.println("Error retrieving column names: " + e.getMessage());
-            }
-        }
     }
-    return list;
+    return null;
 }
 
 
     public static void main(String[] args) {
-        UserDao userdao = new UserDao();
-        ArrayList<User> list = userdao.getUsers();
+        UserDao userDao = new UserDao();
+        ArrayList<User> list = userDao.getUsers();
         System.out.println(list.get(0).toString());
     }
 }

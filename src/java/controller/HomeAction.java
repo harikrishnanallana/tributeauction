@@ -31,6 +31,7 @@ public class HomeAction extends HttpServlet {
         if (user != null) {
             String message = "Welcome: " + user.getUsername();
             request.setAttribute("message", message);
+            
             request.getRequestDispatcher("/page/home.jsp").forward(request, response);
         } else {
             response.sendRedirect(request.getContextPath() + "/LoginAction");

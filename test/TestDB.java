@@ -1,7 +1,7 @@
 
 
-import dal.AdminDao;
 import DBconnect.DBconnector;
+import dal.UserDao;
 import model.User;
 
 
@@ -18,8 +18,8 @@ public class TestDB {
     public static void checkPass(){
          try {
         
-             AdminDao admindao = new AdminDao();
-        User user = admindao.CheckUserLogin("admin", "admin123");
+             UserDao admindao = new UserDao();
+        User user = admindao.UserLogin("admin", "admin123");
         
         if (user == null) {
             String error = "Incorrect information entered, please try again.";
