@@ -1,4 +1,4 @@
-﻿USE master;
+USE master;
 GO
 
 -- Kill active sessions using AuctionDB database
@@ -29,8 +29,9 @@ GO
 
 -- Create the Users table
 CREATE TABLE Users (
-    UserID INT PRIMARY KEY,
+    UserID INT IDENTITY(1,1) PRIMARY KEY,
     Username VARCHAR(50),
+    FullName VARCHAR(50),
     Password VARCHAR(50),
     Email VARCHAR(50),
     Role VARCHAR(10)
@@ -38,35 +39,37 @@ CREATE TABLE Users (
 GO
 
 -- Insert sample data into the Users table
-INSERT INTO Users (UserID, Username, Password, Email, Role)
+INSERT INTO Users (Username, FullName, Password, Email, Role)
 VALUES
-    (1, 'client', 'client123', 'client1@example.com', 'client1'),
-    (2, 'client2', 'password2', 'client2@example.com', 'client2'),
-    (3, 'admin', 'admin123', 'admin@example.com', 'admin');
+    ('client', 'SuperClient One', 'client123', 'client1@example.com', 'client1'),
+    ('client2', 'SuperClient Two', 'password2', 'client2@example.com', 'client2'),
+    ('admin', 'Admin One', 'admin123', 'admin@example.com', 'admin');
 GO
 
--- Create the Auctions table
+-- Create the Auctions table with auto-increment primary key
 CREATE TABLE Auctions (
-    AuctionID INT PRIMARY KEY,
+    AuctionID INT IDENTITY(1,1) PRIMARY KEY,
+    UserID INT,
     Title VARCHAR(100),
     Description VARCHAR(200),
     StartDate DATETIME,
     EndDate DATETIME,
-    Status VARCHAR(20)
+    Status VARCHAR(20),
+    FOREIGN KEY (UserID) REFERENCES Users (UserID)
 );
 GO
 
 -- Insert sample data into the Auctions table
-INSERT INTO Auctions (AuctionID, Title, Description, StartDate, EndDate, Status)
+INSERT INTO Auctions (UserID, Title, Description, StartDate, EndDate, Status)
 VALUES
     (1, 'Auction 1', 'Description for Auction 1', '2023-07-08 12:00:00', '2023-07-10 12:00:00', 'Ongoing'),
     (2, 'Auction 2', 'Description for Auction 2', '2023-07-09 12:00:00', '2023-07-11 12:00:00', 'Upcoming'),
     (3, 'Auction 3', 'Description for Auction 3', '2023-07-06 12:00:00', '2023-07-07 12:00:00', 'Completed');
 GO
 
--- Create the Bids table
+-- Create the Bids table with auto-increment primary key
 CREATE TABLE Bids (
-    BidID INT PRIMARY KEY,
+    BidID INT IDENTITY(1,1) PRIMARY KEY,
     AuctionID INT,
     UserID INT,
     Amount DECIMAL(10, 2),
@@ -77,16 +80,16 @@ CREATE TABLE Bids (
 GO
 
 -- Insert sample data into the Bids table
-INSERT INTO Bids (BidID, AuctionID, UserID, Amount, BidTime)
+INSERT INTO Bids (AuctionID, UserID, Amount, BidTime)
 VALUES
-    (1, 1, 1, 100.00, '2023-07-08 12:05:00'),
-    (2, 1, 2, 120.00, '2023-07-08 12:07:00'),
-    (3, 2, 1, 200.00, '2023-07-09 12:10:00');
+    (1, 1, 100.00, '2023-07-08 12:05:00'),
+    (1, 2, 120.00, '2023-07-08 12:07:00'),
+    (2, 1, 200.00, '2023-07-09 12:10:00');
 GO
 
--- Create the Items table
+-- Create the Items table with auto-increment primary key
 CREATE TABLE Items (
-    ItemID INT PRIMARY KEY,
+    ItemID INT IDENTITY(1,1) PRIMARY KEY,
     AuctionID INT,
     ItemName VARCHAR(100),
     Description VARCHAR(200),
@@ -96,9 +99,9 @@ CREATE TABLE Items (
 GO
 
 -- Insert sample data into the Items table
-INSERT INTO Items (ItemID, AuctionID, ItemName, Description, CurrentBid)
+INSERT INTO Items (AuctionID, ItemName, Description, CurrentBid)
 VALUES
-    (1, 1, 'Item 1', 'Description for Item 1', 120.00),
-    (2, 2, 'Item 2', 'Description for Item 2', 200.00),
-    (3, 3, 'Item 3', 'Description for Item 3', 150.00);
+    (1, 'Item 1', 'Description for Item 1', 120.00),
+    (2, 'Item 2', 'Description for Item 2', 200.00),
+    (3, 'Item 3', 'Description for Item 3', 150.00);
 GO

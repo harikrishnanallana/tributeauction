@@ -22,7 +22,7 @@ public class DBconnector {
     private String hostName = "localhost";
     private String instance = "";
 
-    private String dbName = "PRJDB";
+    private String dbName = "AuctionDB";
     private String username = "niran";
     private String password = "niran@123456";
     private String portNumber = "1433";
@@ -54,47 +54,54 @@ public class DBconnector {
     }
 
     public static void main(String[] args) {
-        DBconnector dbConnector = new DBconnector();
+    try {
+        // Đường dẫn đến tệp .bat nằm ở thư mục bên ngoài
+        String batFilePath = System.getProperty("user.dir") + "\\src\\java\\DBconnect\\initialize.bat";
 
-        // Kiểm tra kết nối thành công
-        if (dbConnector.conn != null) {
-            System.out.println("Kết nối thành công!");
+        // Lấy username và password từ thuộc tính của lớp DBconnector
+        String username = new DBconnector().username;
+        String password = new DBconnector().password;
 
-            try {
-                // Đường dẫn đến tệp .bat nằm ở thư mục bên ngoài
-                String batFilePath = System.getProperty("user.dir") + "\\src\\java\\DBconnect\\initialize.bat";
+        // Thực thi lệnh để chạy tệp .bat với tham số username và password
+        ProcessBuilder processBuilder = new ProcessBuilder("cmd.exe", "/c", batFilePath, username, password);
+        processBuilder.redirectErrorStream(true); // Để hợp nhất stdout và stderr
+        Process process = processBuilder.start();
 
-
-                // Thực thi lệnh để chạy tệp .bat
-                ProcessBuilder processBuilder = new ProcessBuilder("cmd.exe", "/c", batFilePath);
-                processBuilder.redirectErrorStream(true); // Để hợp nhất stdout và stderr
-                Process process = processBuilder.start();
-
-                // Đọc dữ liệu đầu ra từ quá trình
-                BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
-                String line;
-                while ((line = reader.readLine()) != null) {
-                    System.out.println(line);
-                }
-
-                // Đợi quá trình hoàn thành
-                int exitCode = process.waitFor();
-
-                if (exitCode == 0) {
-                    System.out.println("Cơ sở dữ liệu đã được khởi tạo hoặc cập nhật thành công.");
-                } else {
-                    System.out.println("Khởi tạo cơ sở dữ liệu thất bại. Mã thoát: " + exitCode);
-                }
-
-                reader.close();
-            } catch (IOException | InterruptedException ex) {
-                ex.printStackTrace();
-            }
-        } else {
-            System.out.println("Kết nối thất bại!");
+        // Đọc dữ liệu đầu ra từ quá trình
+        BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
+        String line;
+        while ((line = reader.readLine()) != null) {
+            System.out.println(line);
         }
 
-        dbConnector.close();
+        // Đợi quá trình hoàn thành
+        int exitCode = process.waitFor();
+
+        if (exitCode == 0) {
+            System.out.println("Cơ sở dữ liệu đã được khởi tạo hoặc cập nhật thành công.");
+
+            // Kết nối cơ sở dữ liệu
+            DBconnector dbConnector = new DBconnector();
+
+            // Kiểm tra kết nối thành công
+            if (dbConnector.conn != null) {
+                System.out.println("Kết nối thành công!");
+
+                // Thực hiện các thao tác khác trên cơ sở dữ liệu
+                // Đóng kết nối cơ sở dữ liệu
+                dbConnector.close();
+            } else {
+                System.out.println("Kết nối thất bại!");
+            }
+        } else {
+            System.out.println("Khởi tạo cơ sở dữ liệu thất bại. Mã thoát: " + exitCode);
+        }
+
+        reader.close();
+    } catch (IOException | InterruptedException ex) {
+        ex.printStackTrace();
     }
+}
+
 
 }

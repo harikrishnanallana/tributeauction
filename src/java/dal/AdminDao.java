@@ -23,12 +23,12 @@ public class AdminDao extends DBconnector{
             ResultSet rs = stm.executeQuery(query);
             while (rs.next()) {
                 User st = new User(
-                rs.getInt("id"),
-                rs.getString("username"),
-                rs.getString("password"),
-                rs.getString("roles"),
-                rs.getString("fullname"),
-                rs.getBigDecimal("total_money")
+                rs.getInt("UserID"),
+                rs.getString("Username"),
+                rs.getString("Password"),
+                rs.getString("Role"),
+                rs.getString("Email"),
+                rs.getString("FullName")
                 );
                 list.add(st);
             }

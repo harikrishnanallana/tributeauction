@@ -14,5 +14,5 @@ public class Items {
     public String ItemName;
     public String Description;
     public BigDecimal CurrentBid;
-
+    
 }

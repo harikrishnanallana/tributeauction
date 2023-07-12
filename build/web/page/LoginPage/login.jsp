@@ -55,7 +55,7 @@
                          <!--Sign in block end-->
                     
 
-                    <form action="" class="sign-up-form">
+                    <form action="SignUpAction" class="sign-up-form">
                         <h2 class="title">Sign Up</h2>
                         <div class="input-field">
                             <i class="fas fa-user"></i>

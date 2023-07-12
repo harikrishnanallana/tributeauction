@@ -19,14 +19,14 @@ public class User {
     public String FullName;
     public String Password;
     public String Role;
-    public BigDecimal total_money;
+    public String  Email;
 
-    public BigDecimal getTotal_money() {
-        return total_money;
+    public String getEmail() {
+        return Email;
     }
 
-    public void setTotal_money(BigDecimal total_money) {
-        this.total_money = total_money;
+    public void setEmail(String  Email) {
+        this.Email = Email;
     }
 
     public int getID() {
@@ -35,24 +35,24 @@ public class User {
 
     public User(ResultSet rs) {
         try {
-            this.ID = rs.getInt("id");
-            this.Username = rs.getString("username");
-            this.FullName = rs.getString("fullname");
-            this.Password = rs.getString("password");
-            this.Role = rs.getString("roles");
-            this.total_money = rs.getBigDecimal("total_money");
+            this.ID = rs.getInt("UserID");
+            this.Username = rs.getString("Username");
+            this.FullName = rs.getString("FullName");
+            this.Password = rs.getString("Password");
+            this.Role = rs.getString("Role");
+            this.Email = rs.getString("Email");
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
     }
 
-    public User(int ID, String Username, String FullName, String Password, String Role, BigDecimal total_money) {
+    public User(int ID, String Username, String FullName, String Password, String Role, String Email) {
         this.ID = ID;
         this.Username = Username;
         this.FullName = FullName;
         this.Password = Password;
         this.Role = Role;
-        this.total_money = total_money;
+        this.Email = Email;
     }
 //    check login
     public User(int ID,String Username,String Password,String roles){
@@ -68,8 +68,10 @@ public class User {
 
     @Override
     public String toString() {
-        return "User{" + "ID=" + ID + ", Username=" + Username + ", FullName=" + FullName + ", Password=" + Password + ", Role=" + Role + ", total_money=" + total_money + '}';
+        return "User{" + "ID=" + ID + ", Username=" + Username + ", FullName=" + FullName + ", Password=" + Password + ", Role=" + Role + ", Email=" + Email + '}';
     }
+
+
 
     public String getUsername() {
         return Username;
