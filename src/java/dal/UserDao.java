@@ -25,7 +25,6 @@ public class UserDao extends DBconnector {
                         rs.getString("Password"),
                         RoleType.valueOf(rs.getString("Role").toUpperCase()),
                         rs.getString("Email")
-                        
                 );
                 list.add(user);
             }
@@ -43,14 +42,14 @@ public class UserDao extends DBconnector {
             pst.setString(2, user.getFullName());
             pst.setString(3, user.getPassword());
             pst.setString(4, user.getEmail());
-            pst.setString(5, user.RoleDefault().toString().toLowerCase());
+            pst.setString(5, user.getRole().toString().toLowerCase());
             pst.executeUpdate();
         } catch (SQLException ex) {
             System.out.println("SQLException occurred: " + ex.getMessage());
         }
     }
-    
-       public boolean checkUsernameExists(String username) {
+
+    public boolean checkUsernameExists(String username) {
         String query = "SELECT COUNT(*) FROM Users WHERE Username = ?";
         try {
             PreparedStatement pst = conn.prepareStatement(query);
@@ -65,8 +64,8 @@ public class UserDao extends DBconnector {
         }
         return false;
     }
-       
-       public boolean checkEmailExists(String email) {
+
+    public boolean checkEmailExists(String email) {
         String query = "SELECT COUNT(*) FROM Users WHERE Email = ?";
         try {
             PreparedStatement pst = conn.prepareStatement(query);
@@ -81,32 +80,103 @@ public class UserDao extends DBconnector {
         }
         return false;
     }
-       
-       
-       public User UserLogin(String username, String password) {
-    String query = "SELECT * FROM Users WHERE Username = ? AND Password = ?";
-    try {
-        PreparedStatement pst = conn.prepareStatement(query);
-        pst.setString(1, username);
-        pst.setString(2, password);
-        ResultSet rs = pst.executeQuery();
-        if (rs.next()) {
-            User user = new User(
-                    rs.getInt("UserID"),
-                    rs.getString("Username"),
-                    rs.getString("FullName"),
-                    rs.getString("Password"),
-                    RoleType.valueOf(rs.getString("Role").toUpperCase()),
-                    rs.getString("Email")
-            );
-            return user;
-        }
-    } catch (SQLException ex) {
-        System.out.println("SQLException occurred: " + ex.getMessage());
-    }
-    return null;
-}
 
+    public User getUserByUsername(String username) {
+        String query = "SELECT * FROM Users WHERE Username = ?";
+        try {
+            PreparedStatement pst = conn.prepareStatement(query);
+            pst.setString(1, username);
+            ResultSet rs = pst.executeQuery();
+            if (rs.next()) {
+                User user = new User(
+                        rs.getInt("UserID"),
+                        rs.getString("Username"),
+                        rs.getString("FullName"),
+                        rs.getString("Password"),
+                        RoleType.valueOf(rs.getString("Role").toUpperCase()),
+                        rs.getString("Email")
+                );
+                return user;
+            }
+        } catch (SQLException ex) {
+            System.out.println("SQLException occurred: " + ex.getMessage());
+        }
+        return null;
+    }
+
+    public User getUserByEmail(String email) {
+        String query = "SELECT * FROM Users WHERE Email = ?";
+        try {
+            PreparedStatement pst = conn.prepareStatement(query);
+            pst.setString(1, email);
+            ResultSet rs = pst.executeQuery();
+            if (rs.next()) {
+                User user = new User(
+                        rs.getInt("UserID"),
+                        rs.getString("Username"),
+                        rs.getString("FullName"),
+                        rs.getString("Password"),
+                        RoleType.valueOf(rs.getString("Role").toUpperCase()),
+                        rs.getString("Email")
+                );
+                return user;
+            }
+        } catch (SQLException ex) {
+            System.out.println("SQLException occurred: " + ex.getMessage());
+        }
+        return null;
+    }
+
+    public User userLogin(String username, String password) {
+        String query = "SELECT * FROM Users WHERE Username = ? AND Password = ?";
+        try {
+            PreparedStatement pst = conn.prepareStatement(query);
+            pst.setString(1, username);
+            pst.setString(2, password);
+            ResultSet rs = pst.executeQuery();
+            if (rs.next()) {
+                User user = new User(
+                        rs.getInt("UserID"),
+                        rs.getString("Username"),
+                        rs.getString("FullName"),
+                        rs.getString("Password"),
+                        RoleType.valueOf(rs.getString("Role").toUpperCase()),
+                        rs.getString("Email")
+                );
+                return user;
+            }
+        } catch (SQLException ex) {
+            System.out.println("SQLException occurred: " + ex.getMessage());
+        }
+        return null;
+    }
+
+    public void updateUser(User user) {
+        String query = "UPDATE Users SET Username = ?, FullName = ?, Password = ?, Email = ?, Role = ? WHERE UserID = ?";
+        try {
+            PreparedStatement pst = conn.prepareStatement(query);
+            pst.setString(1, user.getUsername());
+            pst.setString(2, user.getFullName());
+            pst.setString(3, user.getPassword());
+            pst.setString(4, user.getEmail());
+            pst.setString(5, user.getRole().toString().toLowerCase());
+            pst.setInt(6, user.getID());
+            pst.executeUpdate();
+        } catch (SQLException ex) {
+            System.out.println("SQLException occurred: " + ex.getMessage());
+        }
+    }
+
+    public void deleteUser(User user) {
+        String query = "DELETE FROM Users WHERE UserID = ?";
+        try {
+            PreparedStatement pst = conn.prepareStatement(query);
+            pst.setInt(1, user.getID());
+            pst.executeUpdate();
+        } catch (SQLException ex) {
+            System.out.println("SQLException occurred: " + ex.getMessage());
+        }
+    }
 
     public static void main(String[] args) {
         UserDao userDao = new UserDao();

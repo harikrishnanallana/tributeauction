@@ -42,7 +42,7 @@ public class LoginAction extends HttpServlet {
         String password = request.getParameter("password");
 
         UserDao userDao = new UserDao();
-        User user = userDao.UserLogin(username, password);
+        User user = userDao.userLogin(username, password);
 
         if (user == null) {
             String error = "Incorrect information entered, please try again.";
