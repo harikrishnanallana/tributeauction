@@ -10,7 +10,7 @@ The main goal of this project is to build an online auction website where users 
 
 - Java Development Kit (JDK) version 8 or above.
 - NetBeans IDE version 13.
-- SQL Server
+- SQL Server 2019 or above.
 
 ## Installation
 
