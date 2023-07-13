@@ -1,6 +1,5 @@
 package controller.pages;
 
-import helplib.Jwt;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
