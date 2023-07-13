@@ -94,14 +94,15 @@ CREATE TABLE Items (
     ItemName VARCHAR(100),
     Description VARCHAR(200),
     CurrentBid DECIMAL(10, 2),
+    ItemType VARCHAR(50) -- Thêm cột "Loại Item"
     FOREIGN KEY (AuctionID) REFERENCES Auctions (AuctionID)
 );
 GO
 
 -- Insert sample data into the Items table
-INSERT INTO Items (AuctionID, ItemName, Description, CurrentBid)
+INSERT INTO Items (AuctionID, ItemName, Description, CurrentBid, ItemType)
 VALUES
-    (1, 'Item 1', 'Description for Item 1', 120.00),
-    (2, 'Item 2', 'Description for Item 2', 200.00),
-    (3, 'Item 3', 'Description for Item 3', 150.00);
+    (1, 'Item 1', 'Description for Item 1', 120.00, 'Type 1'),
+    (2, 'Item 2', 'Description for Item 2', 200.00, 'Type 2'),
+    (3, 'Item 3', 'Description for Item 3', 150.00, 'Type 1');
 GO
