@@ -39,7 +39,7 @@ public class AdminManagerAction extends HttpServlet {
         HttpSession session = request.getSession();
         User user = (User) session.getAttribute("user");
         
-        if (user == null || !user.getRole().equals("admin")) {
+        if (user.getRole() == user.RoleDefault()) {
             response.sendRedirect(request.getContextPath() + "/LoginAction");
         } else {
             processRequest(request, response);

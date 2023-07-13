@@ -19,7 +19,7 @@ public class TestDB {
          try {
         
              UserDao admindao = new UserDao();
-        User user = admindao.UserLogin("123", "123");
+        User user = admindao.UserLogin("admin", "admin123");
         
         if (user == null) {
             String error = "Incorrect information entered, please try again.";

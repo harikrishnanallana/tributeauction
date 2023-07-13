@@ -55,8 +55,7 @@ public class LoginAction extends HttpServlet {
             if (user.getRole() == user.RoleDefault()) {
                    // Nếu người dùng không có vai trò 'admin', chuyển hướng đến trang Home
                 response.sendRedirect(request.getContextPath() + "/HomeAction");
-            } else {
-             
+            } else {      
                 // Nếu người dùng có vai trò 'admin', chuyển hướng đến trang AdminManagerAction
                 response.sendRedirect(request.getContextPath() + "/AdminManagerAction");
             }

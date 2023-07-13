@@ -30,7 +30,7 @@ public class HomeAction extends HttpServlet {
         User user = (User) session.getAttribute("user");
 
         if (user != null) {
-    
+                
             String message = "Welcome: " + user.getRole();
             request.setAttribute("message", message);
             processRequest(request, response);
