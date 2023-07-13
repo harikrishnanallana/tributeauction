@@ -43,7 +43,7 @@ public class UserDao extends DBconnector {
             pst.setString(2, user.getFullName());
             pst.setString(3, user.getPassword());
             pst.setString(4, user.getEmail());
-            pst.setString(5, user.RoleDefault());
+            pst.setString(5, user.RoleDefault().toString().toLowerCase());
             pst.executeUpdate();
         } catch (SQLException ex) {
             System.out.println("SQLException occurred: " + ex.getMessage());

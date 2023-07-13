@@ -19,19 +19,7 @@
     <% } %>
     
     
-    <%
-    String jwt = (String) request.getAttribute("jwt"); // Nhận JWT từ servlet
-    
-    // Xác thực và giải mã JWT
-    Claims claims = Jwts.parser()
-            .setSigningKey(SECRET_KEY.getBytes())
-            .parseClaimsJws(jwt)
-            .getBody();
-
-    // Trích xuất thông tin từ JWT
-    String username = claims.getSubject();
-%>
-    <h1>Welcome, <%= username %></h1>
+   
     
     <a href="LogoutAction">Logout</a>
 </body>

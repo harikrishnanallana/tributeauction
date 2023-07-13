@@ -99,8 +99,8 @@ public class User {
         this.Email = Email;
     }
     
-    public String RoleDefault() {
-        return RoleType.CLIENT.toString().toLowerCase();
+    public RoleType RoleDefault() {
+        return RoleType.CLIENT;
     }
 
     @Override

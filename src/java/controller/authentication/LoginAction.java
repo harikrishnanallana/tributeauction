@@ -1,4 +1,4 @@
-package controller;
+package controller.authentication;
 
 import dal.UserDao;
 import model.User;
@@ -52,12 +52,13 @@ public class LoginAction extends HttpServlet {
             HttpSession session = request.getSession();
             session.setAttribute("user", user);
 
-            if (user.Role.equals("admin")) {
+            if (user.getRole() == user.RoleDefault()) {
+                   // Nếu người dùng không có vai trò 'admin', chuyển hướng đến trang Home
+                response.sendRedirect(request.getContextPath() + "/HomeAction");
+            } else {
+             
                 // Nếu người dùng có vai trò 'admin', chuyển hướng đến trang AdminManagerAction
                 response.sendRedirect(request.getContextPath() + "/AdminManagerAction");
-            } else {
-                // Nếu người dùng không có vai trò 'admin', chuyển hướng đến trang Home
-                response.sendRedirect(request.getContextPath() + "/HomeAction");
             }
         }
     }

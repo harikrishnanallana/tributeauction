@@ -12,6 +12,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>SignIn&SignUp</title>
         <link rel="stylesheet" type="text/css" href="./style.css" />
+
+
+
+
+
+
+
         <script
             src="https://kit.fontawesome.com/64d58efce2.js"
             crossorigin="anonymous"
@@ -22,10 +29,45 @@
         <div class="container">
             <div class="forms-container">
                 <div class="signin-signup">
-                        
+
+
+
                     <!--Sign in block begin-->
                     <form action="LoginAction" method="post" class="sign-in-form">
                         <h2 class="title">Sign In</h2>
+
+                        <%  
+                        String error = request.getParameter("error");
+                        String messages = request.getParameter("message");
+                        if (error != null && !error.isEmpty()) {
+                        %>
+                        <style>
+
+                            .error-message {
+                                display: flex;
+                                align-items: center;
+                                background-color: #f8d7da;
+                                color: #721c24;
+                                padding: 10px;
+                                border-radius: 5px;
+                            }
+
+                            .error-message i {
+                                margin-right: 10px;
+                                color: #721c24;
+                            }
+
+                            .error-message .message {
+                                font-size: 14px;
+                                font-weight: bold;
+                            }
+                        </style>
+                        <div class="error-message">
+                            <i class="fas fa-exclamation-circle"></i>
+                            <span class="message"><%= error %></span>
+                        </div>
+                        <% } %>
+
                         <div class="input-field">
                             <i class="fas fa-user"></i>
                             <input type="text" placeholder="Username" id="username" name="username" required/>
@@ -57,6 +99,10 @@
 
                     <form action="SignUpAction" method="post" class="sign-up-form">
                         <h2 class="title">Sign Up</h2>
+                        <div class="input-field">
+                            <i class="fas fa-user"></i>
+                            <input type="text" placeholder="Fullname" id="signup-fullname" name="fullname" required/>
+                        </div>
                         <div class="input-field">
                             <i class="fas fa-user"></i>
                             <input type="text" placeholder="Username" id="signup-username" name="username" required/>

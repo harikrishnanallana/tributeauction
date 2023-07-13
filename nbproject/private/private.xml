@@ -3,29 +3,17 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/nkhan/OneDrive/Documents/NetBeansProjects/AuctionPage/src/java/helplib/Jwt.java</file>
-            <file>file:/C:/Users/nkhan/OneDrive/Documents/NetBeansProjects/AuctionPage/src/java/helplib/RedirectMess.java</file>
-            <file>file:/C:/Users/nkhan/OneDrive/Documents/NetBeansProjects/AuctionPage/src/java/model/Auctions.java</file>
-            <file>file:/C:/Users/nkhan/OneDrive/Documents/NetBeansProjects/AuctionPage/web/page/welcome.jsp</file>
-            <file>file:/C:/Users/nkhan/OneDrive/Documents/NetBeansProjects/AuctionPage/src/java/DBconnect/initialize.bat</file>
-            <file>file:/C:/Users/nkhan/OneDrive/Documents/NetBeansProjects/AuctionPage/src/java/model/Items.java</file>
-            <file>file:/C:/Users/nkhan/OneDrive/Documents/NetBeansProjects/AuctionPage/src/java/DBconnect/DBconnector.java</file>
-            <file>file:/C:/Users/nkhan/OneDrive/Documents/NetBeansProjects/AuctionPage/src/java/model/Bids.java</file>
-            <file>file:/C:/Users/nkhan/OneDrive/Documents/NetBeansProjects/AuctionPage/src/java/dal/UserDao.java</file>
-            <file>file:/C:/Users/nkhan/OneDrive/Documents/NetBeansProjects/AuctionPage/web/page/login.jsp</file>
-            <file>file:/C:/Users/nkhan/OneDrive/Documents/NetBeansProjects/AuctionPage/src/java/DBconnect/database.sql</file>
-            <file>file:/C:/Users/nkhan/OneDrive/Documents/NetBeansProjects/AuctionPage/src/java/model/User.java</file>
+            <file>file:/C:/Users/nkhan/OneDrive/Documents/NetBeansProjects/AuctionPage/web/page/HomePage/home.jsp</file>
+            <file>file:/C:/Users/nkhan/OneDrive/Documents/NetBeansProjects/AuctionPage/src/java/controller/authentication/LogoutAction.java</file>
             <file>file:/C:/Users/nkhan/OneDrive/Documents/NetBeansProjects/AuctionPage/web/page/LoginPage/login.jsp</file>
             <file>file:/C:/Users/nkhan/OneDrive/Documents/NetBeansProjects/AuctionPage/test/TestDB.java</file>
-            <file>file:/C:/Users/nkhan/OneDrive/Documents/NetBeansProjects/AuctionPage/src/conf/MANIFEST.MF</file>
-            <file>file:/C:/Users/nkhan/OneDrive/Documents/NetBeansProjects/AuctionPage/src/java/controller/AdminManagerAction.java</file>
-            <file>file:/C:/Users/nkhan/OneDrive/Documents/NetBeansProjects/AuctionPage/src/java/dal/ItemsDao.java</file>
-            <file>file:/C:/Users/nkhan/OneDrive/Documents/NetBeansProjects/AuctionPage/web/page/home.jsp</file>
-            <file>file:/C:/Users/nkhan/OneDrive/Documents/NetBeansProjects/AuctionPage/src/java/controller/LoginAction.java</file>
-            <file>file:/C:/Users/nkhan/OneDrive/Documents/NetBeansProjects/AuctionPage/web/WEB-INF/web.xml</file>
-            <file>file:/C:/Users/nkhan/OneDrive/Documents/NetBeansProjects/AuctionPage/src/java/controller/LogoutAction.java</file>
-            <file>file:/C:/Users/nkhan/OneDrive/Documents/NetBeansProjects/AuctionPage/src/java/controller/SignUpAction.java</file>
-            <file>file:/C:/Users/nkhan/OneDrive/Documents/NetBeansProjects/AuctionPage/src/java/controller/HomeAction.java</file>
+            <file>file:/C:/Users/nkhan/OneDrive/Documents/NetBeansProjects/AuctionPage/src/java/model/User.java</file>
+            <file>file:/C:/Users/nkhan/OneDrive/Documents/NetBeansProjects/AuctionPage/src/java/controller/authentication/AdminManagerAction.java</file>
+            <file>file:/C:/Users/nkhan/OneDrive/Documents/NetBeansProjects/AuctionPage/src/java/controller/authentication/LoginAction.java</file>
+            <file>file:/C:/Users/nkhan/OneDrive/Documents/NetBeansProjects/AuctionPage/web/page/adminmanager.jsp</file>
+            <file>file:/C:/Users/nkhan/OneDrive/Documents/NetBeansProjects/AuctionPage/src/java/controller/pages/HomeAction.java</file>
+            <file>file:/C:/Users/nkhan/OneDrive/Documents/NetBeansProjects/AuctionPage/src/java/controller/authentication/SignUpAction.java</file>
+            <file>file:/C:/Users/nkhan/OneDrive/Documents/NetBeansProjects/AuctionPage/src/java/dal/UserDao.java</file>
         </group>
     </open-files>
 </project-private>

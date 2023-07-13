@@ -9,6 +9,8 @@
     <h2>Admin Manager</h2>
     <% 
         String message = (String) request.getAttribute("message");
+        
+        
         if (message != null && !message.isEmpty()) {
     %>
     <h3><%= message %></h3>

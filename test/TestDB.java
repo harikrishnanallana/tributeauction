@@ -19,13 +19,16 @@ public class TestDB {
          try {
         
              UserDao admindao = new UserDao();
-        User user = admindao.UserLogin("admin", "admin123");
+        User user = admindao.UserLogin("123", "123");
         
         if (user == null) {
             String error = "Incorrect information entered, please try again.";
             System.out.println(error);
         } else {
             String message = "Welcome: " + user.Username;
+            System.out.println(user.getRole() == user.RoleDefault());
+            System.out.println(user.getRole());
+            System.out.println(user.RoleDefault());
             System.out.println(message);
         }
     } catch (NumberFormatException e) {
