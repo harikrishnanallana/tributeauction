@@ -63,6 +63,9 @@ public class Bids {
         this.Amount = Amount;
     }
 
+    public Bids() {
+    }
+
     public Bids(int BidID, int AuctionID, int UserID, LocalDateTime BidTime, BigDecimal Amount) {
         this.BidID = BidID;
         this.AuctionID = AuctionID;

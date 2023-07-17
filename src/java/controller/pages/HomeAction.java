@@ -16,7 +16,7 @@ public class HomeAction extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try {
-            request.getRequestDispatcher("/page/HomePage/home.jsp").forward(request, response);
+            request.getRequestDispatcher("/page/HomePage/MainPage.jsp").forward(request, response);
         } catch (ServletException | IOException e) {
             e.printStackTrace();
         }

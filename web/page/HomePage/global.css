@@ -1,0 +1,40 @@
+body {
+  margin: 0;
+  line-height: normal;
+}
+
+:root {
+  /* fonts */
+  --font-inter: Inter;
+  --font-league-gothic: "League Gothic";
+  --font-bai-jamjuree: "Bai Jamjuree";
+  --font-racing-sans-one: "Racing Sans One";
+
+  /* font sizes */
+  --font-size-5xl: 24px;
+  --font-size-lgi: 19px;
+  --font-size-xl: 20px;
+  --font-size-base: 16px;
+
+  /* Colors */
+  --color-white: #fff;
+  --color-lightpink-100: #f8a4bd;
+  --color-lightpink-200: #f4a7ba;
+  --color-hotpink-100: #f061a0;
+  --color-hotpink-200: rgba(240, 97, 160, 0.46);
+  --color-black: #000;
+  --color-gray-100: rgba(255, 255, 255, 0);
+  --color-gray-200: rgba(0, 0, 0, 0.58);
+  --color-palevioletred: #e1738e;
+
+  /* Gaps */
+  --gap-mini: 15px;
+  --gap-8xs: 5px;
+
+  /* Paddings */
+  --padding-xl: 20px;
+  --padding-3xs: 10px;
+
+  /* border radiuses */
+  --br-2xs: 11px;
+}

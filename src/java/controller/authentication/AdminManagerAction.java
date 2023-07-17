@@ -4,6 +4,7 @@
  */
 package controller.authentication;
 
+import dal.UserDao;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -11,6 +12,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.ArrayList;
 import model.User;
 
 /**
@@ -25,6 +27,11 @@ public class AdminManagerAction extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try {
+            
+            UserDao userdao = new UserDao();
+            ArrayList<User> list = userdao.getUsers();
+            request.setAttribute("data", list);
+            
             request.getRequestDispatcher("/page/adminmanager.jsp").forward(request, response);
         } catch (ServletException | IOException e) {
             e.printStackTrace();
@@ -59,4 +66,11 @@ public class AdminManagerAction extends HttpServlet {
         return "Short description";
     }// </editor-fold>
 
+    public static void main(String[] args) {
+        UserDao userdao = new UserDao();
+            ArrayList<User> lists = userdao.getUsers();
+            for (User list : lists){
+                System.out.println(list.toString());
+            }
+    }
 }
