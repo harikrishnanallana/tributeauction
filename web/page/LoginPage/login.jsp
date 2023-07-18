@@ -39,18 +39,18 @@
                         %>
                         <style>
 
-                            .error-message {
+                             .error-message {
                                 display: flex;
                                 align-items: center;
-                                background-color: #f8d7da;
-                                color: #721c24;
+                                background-color: #e993ae;
+                                color: #000000;
                                 padding: 10px;
                                 border-radius: 5px;
                             }
 
                             .error-message i {
                                 margin-right: 10px;
-                                color: #721c24;
+                                color: #c31c67;
                             }
 
                             .error-message .message {
@@ -188,7 +188,7 @@
             .container {
                 position: relative;
                 width: 100%;
-                background-color: #fff;
+                background-color: #000000;
                 min-height: 100vh;
                 overflow: hidden;
             }
@@ -236,17 +236,19 @@
 
             .title {
                 font-size: 2.2rem;
-                color: #444;
+                color: #c73055;
                 margin-bottom: 10px;
             }
 
             .input-field {
                 max-width: 380px;
                 width: 100%;
-                background-color: #f0f0f0;
+            
+                background-color: #000000;
                 margin: 10px 0;
                 height: 55px;
-                border-radius: 55px;
+                border-radius: 55px  ;
+                border:  #d62e69 2px solid;
                 display: grid;
                 grid-template-columns: 15% 85%;
                 padding: 0 0.4rem;
@@ -256,7 +258,7 @@
             .input-field i {
                 text-align: center;
                 line-height: 55px;
-                color: #acacac;
+                color: #d62e69;
                 transition: 0.5s;
                 font-size: 1.1rem;
             }
@@ -268,11 +270,11 @@
                 line-height: 1;
                 font-weight: 600;
                 font-size: 1.1rem;
-                color: #333;
+                color: #d62e69;
             }
 
             .input-field input::placeholder {
-                color: #aaa;
+                color: #d62e69;
                 font-weight: 500;
             }
 
@@ -293,27 +295,27 @@
                 justify-content: center;
                 align-items: center;
                 margin: 0 0.45rem;
-                color: #333;
+                color: #d62e69;
                 border-radius: 50%;
-                border: 1px solid #333;
+                border: 1px solid   #d62e69;
                 text-decoration: none;
                 font-size: 1.1rem;
                 transition: 0.3s;
             }
 
             .social-icon:hover {
-                color: #4481eb;
-                border-color: #4481eb;
+                color: #d62e69;
+                border-color: #d62e69;
             }
 
             .btn {
                 width: 150px;
-                background-color: #5995fd;
+                background-color: #d62e69;
                 border: none;
                 outline: none;
                 height: 49px;
                 border-radius: 49px;
-                color: #fff;
+                color: #000000;
                 text-transform: uppercase;
                 font-weight: 600;
                 margin: 10px 0;
@@ -322,7 +324,7 @@
             }
 
             .btn:hover {
-                background-color: #4d84e2;
+                background-color: #d62e69;
             }
             .panels-container {
                 position: absolute;
@@ -342,7 +344,7 @@
                 top: -10%;
                 right: 48%;
                 transform: translateY(-50%);
-                background-image: linear-gradient(-45deg, #4481eb 0%, #04befe 100%);
+                background-image: linear-gradient(-45deg, #eb4473 0%, #550627 100%);
                 transition: 1.8s ease-in-out;
                 border-radius: 50%;
                 z-index: 6;
@@ -355,6 +357,7 @@
             }
 
             .panel {
+                
                 display: flex;
                 flex-direction: column;
                 align-items: flex-end;
@@ -364,6 +367,7 @@
             }
 
             .left-panel {
+            
                 pointer-events: all;
                 padding: 3rem 17% 2rem 12%;
             }
@@ -374,7 +378,8 @@
             }
 
             .panel .content {
-                color: #fff;
+               
+                color: #000000;
                 transition: transform 0.9s ease-in-out;
                 transition-delay: 0.6s;
             }
@@ -386,6 +391,7 @@
             }
 
             .panel p {
+                
                 font-size: 0.95rem;
                 padding: 0.7rem 0;
             }
@@ -393,7 +399,7 @@
             .btn.transparent {
                 margin: 0;
                 background: none;
-                border: 2px solid #fff;
+                border: 2px solid #000000;
                 width: 130px;
                 height: 41px;
                 font-weight: 600;
