@@ -11,392 +11,370 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1, width=device-width" />
 
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/page/HomePage/global.css"  type="text/css"/>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/page/HomePage/index.css"  type="text/css"/>
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Racing Sans One:wght@400&display=swap"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Bai Jamjuree:wght@400&display=swap"
-       
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=League Gothic:wght@400&display=swap"
-    />
+       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Racing Sans One:wght@400&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bai Jamjuree:wght@400&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=League Gothic:wght@400&display=swap" />
   </head>
-  <body>
-    <div class="trang-chnh">
-      <div class="home">
-        <div class="background">
-          <div class="background-child"></div>
-          <img class="image-10-icon" alt="" src="./public/image-10@2x.png" />
+ <body>
 
-          <img class="image-14-icon" alt="" src="./public/image-14@2x.png" />
-        </div>
-        <div class="header">
-          <div class="nav">
-            <div class="nn-nav"></div>
-            <b class="about" id="aboutText">About</b>
-            <b class="shop-store" id="shopStoreText">Shop Store</b>
-            <b class="blog">Blog</b>
-            <b class="auction" id="auctionText">Auction</b>
-            <b class="home1">Home</b>
-          </div>
-          <img class="logo-icon" alt="" src="./public/logo@2x.png" />
+    <style>
+        .header.row {
+            background-image: url(./public/image-14@2x.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
 
-          <div class="sign-up" id="signUpContainer">
-            <div class="signup"></div>
-            <b class="sign-up1">SIGN UP</b>
-          </div>
-          <div class="login" id="loginContainer">
-            <div class="signup"></div>
-            <b class="login1">LOGIN</b>
-          </div>
-        </div>
-      </div>
-      <div class="footer">
-        <div class="service-hotline">
-          <b class="b">Service-Hotline</b>
-          <div class="telefonische-beratung-unter">
-            Telefonische Beratung unter:
-          </div>
-          <b class="b">+49 (0) 771 / 175 131 69</b>
-        </div>
-        <img class="footer-child" alt="" src="./public/line-3.svg" />
 
-        <div class="shop-service">
-          <b class="b">Shop Service</b>
-          <div class="shop-service-child"></div>
-          <div class="agb">AGB</div>
-          <div class="agb">Contact</div>
-          <div class="agb">Right of withdrawal</div>
-          <div class="agb">FAQ</div>
-          <div class="agb">Shipping and payment terms</div>
-        </div>
-        <img class="footer-child" alt="" src="./public/line-3.svg" />
+        .carousel {
+            margin-top: 100px;
+            /* Điều chỉnh độ cao giữa header và carousel */
+        }
 
-        <div class="shop-service">
-          <b class="b">Informationen</b>
-          <div class="agb">Download area</div>
-          <div class="agb">Imprint</div>
-          <div class="agb">Data protection</div>
-          <div class="agb">Newsletter</div>
-          <div class="agb">Shipment</div>
-        </div>
-        <img class="footer-child" alt="" src="./public/line-3.svg" />
+        .header-button {
+            font-size: 24px;
+            color: #f8a4bd;
+        }
 
-        <div class="our-company">
-          <b class="b">Our Company</b>
-          <div class="about-us-parent">
-            <div class="agb">About Us</div>
-            <div class="agb">Contact</div>
-            <div class="agb">Guarantee</div>
-          </div>
-          <div class="frame-parent">
-            <img class="frame-icon" alt="" src="./public/frame.svg" />
+        .limit-block {
+            justify-content: center;
+        }
 
-            <img class="vector-icon" alt="" src="./public/vector.svg" />
+        .title-about-us {
 
-            <img class="frame-icon" alt="" src="./public/frame1.svg" />
+            text-decoration: underline;
+            display: inline-block;
+            backdrop-filter: blur(6px);
+            font-size: 64px;
+            font-family: "Racing Sans One";
+        }
 
-            <img class="frame-icon2" alt="" src="./public/frame2.svg" />
-          </div>
-        </div>
-      </div>
-      <div class="shop-store1" data-scroll-to="shopStoreContainer">
-        <div class="nn-hng"></div>
-        <img
-          class="logo-shop-store"
-          alt=""
-          src="./public/logo-shop-store@2x.png"
-        />
+        .content-about-us {
+            font-size: 20px;
+            font-family: "Bai Jamjuree";
+            text-align: justify;
+            display: inline-block;
 
-        <div class="card-bo-gc">
-          <div class="lisa">
-            <div class="image-8"></div>
-            <img class="image-4-icon" alt="" src="./public/image-4@2x.png" />
+        }
 
-            <b class="blackpink-oreo-container">
-              <p class="blackpink-oreo">BLACKPINK × OREO LISA</p>
-              <p class="blackpink-oreo">5$</p>
-            </b>
-          </div>
-          <div class="jisoo">
-            <div class="image-81"></div>
-            <img class="image-7-icon" alt="" src="./public/image-7@2x.png" />
+        .limit-product-title {
+            font-family: "Inter";
+        }
 
-            <b class="blackpink-oreo-container1">
-              <p class="blackpink-oreo">BLACKPINK × OREO JISOO</p>
-              <p class="blackpink-oreo">5$</p>
-            </b>
-          </div>
-          <div class="rose">
-            <div class="image-7"></div>
-            <b class="blackpink-oreo-container2">
-              <p class="blackpink-oreo">BLACKPINK × OREO ROSE</p>
-              <p class="blackpink-oreo">5$</p>
-            </b>
-            <img class="image-5-icon" alt="" src="./public/image-5@2x.png" />
-          </div>
-          <div class="jennie">
-            <div class="image-71"></div>
-            <img class="image-6-icon" alt="" src="./public/image-6@2x.png" />
+        .rose-card,
+        .lisa-card {
+            background: linear-gradient(180deg, #fff, rgba(255, 255, 255, 0));
+            color: black;
+        }
 
-            <b class="blackpink-oreo-container3">
-              <p class="blackpink-oreo">BLACKPINK × OREO JENNIE</p>
-              <p class="blackpink-oreo">3$</p>
-            </b>
-          </div>
-        </div>
-        <div class="b-sn-phm-abum">
-          <div class="lisa-307">
-            <img class="image-12-icon" alt="" src="./public/image-12@2x.png" />
+        .jennie-card,
+        .jisoo-card {
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0), #fff);
+            color: #f061a0;
+        }
 
-            <div class="lisa0327">
-              <img
-                class="lisa0327-child"
-                alt=""
-                src="./public/rectangle-14.svg"
-              />
+        .rose-card-img,
+        .lisa-card-img,
+        .jennie-card-img,
+        .jisoo-card-img {
+            padding: 2px;
+        }
 
-              <b class="blackpink-oreo-container4">
-                <p class="blackpink-oreo">BLACKPINK × OREO LISA</p>
-                <p class="blackpink-oreo">5$</p>
-              </b>
+        .shop-char {
+            padding-top: 5px;
+            font-size: 1.5vw;
+            padding: unset;
+        }
+
+        .rose-card,
+        .lisa-card,
+        .jennie-card,
+        .jisoo-card {
+            justify-content: center;
+            align-items: center;
+            padding: 2px;
+            border: unset;
+            border-radius: unset;
+        }
+
+        .block-card-char {
+            justify-content: center;
+        }
+    </style>
+
+    <div class="container-fluid">
+        <div class="header row" style="height: 500px;">
+            <div class="col col-md-12">
+                <div class="row">
+                    <div class="col-md-3 text-center">
+                        <img class="" alt="" src="./public/logo@2x.png" />
+                    </div>
+                    <div class="mb-5 col-md-6 text-center">
+                        <div class="text-center">
+                            <button type="button" style="font-size: 3vw;"
+                                class="header-button btn btn-default mr-2">About</button>
+                            <button type="button" style="font-size: 3vw;"
+                                class="header-button btn btn-default mr-2">Shop Store</button>
+
+                            <button type="button" style="font-size: 3vw;"
+                                class="header-button btn btn-default mr-2">Auction</button>
+                            <button type="button" style="font-size: 3vw;"
+                                class="header-button btn btn-default">Home</button>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="row">
+                            <div class="col">
+                                <button type="button" style="font-size: 3vw;"
+                                    class="header-button btn btn-default col-md-5">LOGIN</button>
+                                <button type="button" style="white-space: nowrap;font-size: 3vw;"
+                                    class="header-button btn btn-default col-md-5">SIGN UP</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="lisa03271">
-              <div class="lisa0327-item"></div>
-              <b class="blackpink-oreo-container4">
-                <p class="blackpink-oreo">BLACKPINK × OREO LISA</p>
-                <p class="blackpink-oreo">5$</p>
-              </b>
+        </div>
+
+        <div class="row" style="background-color: #f8a4bd; color: #fff;justify-content: space-around;">
+            <div class="row justify-content-center col-md-12 ">
+                <img src="./public/image-15@2x.png" alt="" style="margin: 5px;">
             </div>
-          </div>
-          <div class="concert">
-            <img class="image-11-icon" alt="" src="./public/image-11@2x.png" />
-
-            <div class="concert1">
-              <div class="concert-child"></div>
-              <b class="blackpink-oreo-container6">
-                <p class="blackpink-oreo">BLACKPINK × OREO LISA</p>
-                <p class="blackpink-oreo">5$</p>
-              </b>
+            <div class="row col-md-12  text-center " style="justify-content: flex-start;">
+                <div class="col-md-3 " style="align-items: center;">
+                    <p class="title-about-us"
+                        style="display: flex; white-space: nowrap;font-size: 5vw;align-items: center;justify-content: center;">
+                        About Us</p>
+                </div>
+                <div class="col-md-9 overflow-visible">
+                    <p class="content-about-us" style="word-wrap: break-word;font-size: 2vw;">
+                        <!-- Thêm 'word-wrap: break-word;' để chữ không tràn ra ngoài màn hình -->
+                        With the ever-growing KPop wave and the global popularity of KPop groups, IDOL OSIS was created
+                        to cater to the passion and fandom of KPop enthusiasts worldwide. We take pride in being the
+                        bridge between fans and their idols, offering a unique and exciting experience for the KPop
+                        community.
+                        <br><br>
+                        IDOL OSIS is a leading online auction platform that specializes in consulting, buying, and
+                        auctioning products related to KPop artists. We provide a fair and transparent playground where
+                        you can participate in auctions for authentic items from KPop artists, including personal
+                        belongings, clothing, accessories, autographed albums, special concert tickets, and much more.
+                        <br><br>
+                        Join us at IDOL OSIS and discover a colorful world of unique KPop products. Get ready for
+                        exciting auction experiences and the chance to own priceless items not found anywhere else. Step
+                        into the realm of KPop and unleash your fandom to the fullest!
+                    </p>
+                </div>
             </div>
-          </div>
-          <div class="born-pink">
-            <img class="image-13-icon" alt="" src="./public/image-13@2x.png" />
+        </div>
 
-            <div class="abum-born-pink">
-              <div class="abum-born-pink-child"></div>
-              <b class="blackpink-oreo-container7">
-                <p class="blackpink-oreo">BLACKPINK × OREO LISA</p>
-                <p class="blackpink-oreo">5$</p>
-              </b>
+        <div class="row limit-block" style="background-color: black">
+            <div class="col-md-12">
+                <p class="limit-product-title text-center" style="color: #fff; font-size: 4vw;white-space: nowrap;">
+                    Limited Product</p>
             </div>
-          </div>
-        </div>
-        <div class="shop-all" id="sHOPALLContainer">
-          <div class="shop-all-child"></div>
-          <b class="shop-all1"> SHOP ALL</b>
-        </div>
-      </div>
-      <div class="about-us1" data-scroll-to="aboutUsContainer">
-        <div class="nn-about-us"></div>
-        <div class="about-us2">ABOUT US</div>
-        <div class="welcome-to-idol-container">
-          <p class="blackpink-oreo">
-            Welcome to IDOL OSIS - a dedicated website for auctioning KPop
-            artists' products!
-          </p>
-          <p class="blackpink-oreo">&nbsp;</p>
-          <p class="blackpink-oreo">
-            With the ever-growing KPop wave and the global popularity of KPop
-            groups, IDOL OSIS was created to cater to the passion and fandom of
-            KPop enthusiasts worldwide. We take pride in being the bridge
-            between fans and their idols, offering a unique and exciting
-            experience for the KPop community.IDOL OSIS is a leading online
-            auction platform that specializes in consulting, buying, and
-            auctioning products related to KPop artists. We provide a fair and
-            transparent playground where you can participate in auctions for
-            authentic items from KPop artists, including personal belongings,
-            clothing, accessories, autographed albums, special concert tickets,
-            and much more.
-          </p>
-          <p class="blackpink-oreo">&nbsp;</p>
-          <p class="blackpink-oreo">
-            Join us at IDOL OSIS and discover a colorful world of unique KPop
-            products. Get ready for exciting auction experiences and the chance
-            to own priceless items not found anywhere else. Step into the realm
-            of KPop and unleash your fandom to the fullest!
-          </p>
-        </div>
-        <img class="image-15-icon" alt="" src="./public/image-15@2x.png" />
-      </div>
-      <div class="limit-product">
-        <div class="nn-limit"></div>
-        <b class="limited-product">Limited Product</b>
-        <div class="phone">
-          <img class="image-18-icon" alt="" src="./public/image-18@2x.png" />
+            <div class="row justify-content-center">
+                <div class="card col-md-3 col-sm-6 col-12 col-lg-3" style="margin: 10px;">
+                    <img src="./public/image-16@2x.png" class="card-img-top" alt="...">
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <div>
+                            <h5 class="card-title" style="font-size: 2vw; padding: 5px;">SAMSUNG GALAXY WATCH ACTIVE X
+                                BLACKPINK</h5>
+                            <p class="card-text" style="font-size: 2vw; padding: 5px;">14.990.000 VND</p>
+                        </div>
+                        <div>
+                            <a href="#" class="btn btn-primary" style="font-size: 2vw;">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
 
-          <b class="samsung-galaxy-a80-container">
-            <p class="blackpink-oreo">SAMSUNG GALAXY A80 X BLACKPINK</p>
-            <p class="blackpink-oreo">14.990.000 VND</p>
-          </b>
+                <div class="card col-md-3 col-sm-6 col-12 col-lg-3" style="margin: 10px;">
+                    <img src="./public/image-16@2x.png" class="card-img-top" alt="...">
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <div>
+                            <h5 class="card-title" style="font-size: 2vw; padding: 5px;">SAMSUNG GALAXY WATCH ACTIVE X
+                                BLACKPINK</h5>
+                            <p class="card-text" style="font-size: 2vw; padding: 5px;">14.990.000 VND</p>
+                        </div>
+                        <div>
+                            <a href="#" class="btn btn-primary" style="font-size: 1vw;">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card col-md-3 col-sm-6 col-12 col-lg-3" style="margin: 10px;">
+                    <img src="./public/image-16@2x.png" class="card-img-top" alt="...">
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <div>
+                            <h5 class="card-title" style="font-size: 2vw; padding: 5px;">SAMSUNG GALAXY WATCH ACTIVE X
+                                BLACKPINK</h5>
+                            <p class="card-text" style="font-size: 2vw; padding: 5px;">14.990.000 VND</p>
+                        </div>
+                        <div>
+                            <a href="#" class="btn btn-primary" style="font-size: 2vw;">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="ng-h">
-          <img class="image-16-icon" alt="" src="./public/image-16@2x.png" />
 
-          <b class="samsung-galaxy-watch-container">
-            <p class="blackpink-oreo">
-              SAMSUNG GALAXY WATCH ACTIVE X BLACKPINK
-            </p>
-            <p class="blackpink-oreo">14.990.000 VND</p>
-          </b>
-        </div>
-        <div class="tai-nghe">
-          <img class="image-17-icon" alt="" src="./public/image-17@2x.png" />
+        <div class="block-card-char row row-cols-1 row-cols-md-3  text-center shopstort"
+            style="background-color: #f8a4bd;">
+            <div class="col-12 col-lg-12 col-sm-12 col-md-12 row">
+                <div style="display: flex;">
+                    <img class="  " alt="" style="width: 185px;height: 135px;" src="./public/logo-shop-store@2x.png" />
+                </div>
+            </div>
 
-          <b class="samsung-galaxy-buds-container">
-            <p class="blackpink-oreo">SAMSUNG GALAXY BUDS X BLACKPINK</p>
-            <p class="blackpink-oreo">14.990.000 VND</p>
-          </b>
-        </div>
-      </div>
-      <div class="auction1">
-        <div class="nn-aution"></div>
-        <div class="lalisa">
-          <div class="auction-lalisa">
-            <div class="auction-lalisa-child"></div>
-            <b class="seller-vu-huynh-container">
-              <p class="blackpink-oreo">Seller: Vu Huynh</p>
-              <p class="blackpink-oreo">End time: 12:00 31.7.2023</p>
-            </b>
-            <b class="lisa-first-single-container">
-              <p class="blackpink-oreo">
-                LISA FIRST SINGLE VINYL LP LALISA [LIMITED EDITION]
-              </p>
-              <p class="blackpink-oreo">Starting Price: 46.28$</p>
-            </b>
-          </div>
-          <img class="image-19-icon" alt="" src="./public/image-19@2x.png" />
-        </div>
-        <div class="lalisa">
-          <div class="auction-lalisa">
-            <div class="auction-lalisa-child"></div>
-            <b class="seller-vu-huynh-container">
-              <p class="blackpink-oreo">Seller: Vu Huynh</p>
-              <p class="blackpink-oreo">End time: 12:00 31.7.2023</p>
-            </b>
-            <b class="lisa-first-single-container">
-              <p class="blackpink-oreo">
-                LISA FIRST SINGLE VINYL LP LALISA [LIMITED EDITION]
-              </p>
-              <p class="blackpink-oreo">Starting Price: 46.28$</p>
-            </b>
-          </div>
-          <img class="image-19-icon" alt="" src="./public/image-19@2x.png" />
-        </div>
-        <div class="logo-aution">AUCTION</div>
-        <div class="mini-skirt">
-          <div class="mini-skirt1" id="mINISKIRTContainer">
-            <div class="auction-lalisa-child"></div>
-            <b class="seller-vu-huynh-container">
-              <p class="blackpink-oreo">Seller: Vu Huynh</p>
-              <p class="blackpink-oreo">End time: 12:00 31.7.2023</p>
-            </b>
-            <b class="lisa-first-single-container">
-              <p class="blackpink-oreo">MINI PLEATS SKIRT_BLACK</p>
-              <p class="blackpink-oreo">&nbsp;</p>
-              <p class="blackpink-oreo">Starting Price: 110.04$</p>
-            </b>
-          </div>
-          <img class="image-20-icon" alt="" src="./public/image-20@2x.png" />
-        </div>
-        <div class="stripe">
-          <div class="stripe1">
-            <div class="stripe-child"></div>
-            <b class="seller-vu-huynh-container3">
-              <p class="blackpink-oreo">Seller: Vu Huynh</p>
-              <p class="blackpink-oreo">End time: 12:00 31.7.2023</p>
-            </b>
-            <b class="classic-regimental-tie-grey-container">
-              <p class="blackpink-oreo">CLASSIC REGIMENTAL TIE_GREY STRIPE</p>
-              <p class="blackpink-oreo">Starting Price: 45.55$</p>
-            </b>
-          </div>
-          <img class="image-21-icon" alt="" src="${pageContext.request.contextPath}/page/HomePage/public/image-21@2x.png" />
-        </div>
-        <div class="show-more">
-          <div class="show-more-child"></div>
-          <b class="show-more1">SHOW MORE</b>
-        </div>
-      </div>
-    </div>
+            <div class="mb-4 row col-12 col-lg-12 col-sm-12 col-md-12 ">
+                <!-- lisa jisoo rose jennie-->
+                <div class="lisa-card card col-3 col-lg-3 col-sm-3 col-md-3 ">
+                    <img class="lisa-card-img card-img-top" alt="" src="./public/image-4@2x.png" />
+                    <b class="card-body shop-char">
+                        <p class="card-title" style="white-space: nowrap;">BLACKPINK × OREO LISA</p>
+                        <p class="card-subtitle">5$</p>
+                    </b>
+                </div>
+                <div class="jisoo-card card  col-3 col-lg-3 col-sm-3 col-md-3">
+                    <img class="jisoo-card-img card-img-top" alt="" src="./public/image-4@2x.png" />
+                    <b class="card-body shop-char">
+                        <p class="card-title" style="white-space: nowrap;">BLACKPINK × OREO LISA</p>
+                        <p class="card-subtitle">5$</p>
+                    </b>
+                </div>
+                <div class="rose-card card col-3 col-lg-3 col-sm-3 col-md-3 ">
+                    <img class="rose-card-img card-img-top" alt="" src="./public/image-4@2x.png" />
+                    <b class="card-body shop-char">
+                        <p class="card-title" style="white-space: nowrap;">BLACKPINK × OREO LISA</p>
+                        <p class="card-subtitle">5$</p>
+                    </b>
+                </div>
+                <div class="jennie-card card  col-3 col-lg-3 col-sm-3 col-md-3 ">
+                    <img class="jennie-card-img card-img-top" alt="" src="./public/image-4@2x.png" />
+                    <b class="card-body shop-char">
+                        <p class="card-title" style="white-space: nowrap;">BLACKPINK × OREO LISA</p>
+                        <p class="card-subtitle">5$</p>
+                    </b>
+                </div>
 
-    <script>
-      var aboutText = document.getElementById("aboutText");
-      if (aboutText) {
-        aboutText.addEventListener("click", function () {
-          var anchor = document.querySelector("[data-scroll-to='aboutUsContainer']");
-          if (anchor) {
-            anchor.scrollIntoView({ block: "start", behavior: "smooth" });
-          }
-        });
-      }
-      
-      var shopStoreText = document.getElementById("shopStoreText");
-      if (shopStoreText) {
-        shopStoreText.addEventListener("click", function () {
-          var anchor = document.querySelector(
-            "[data-scroll-to='shopStoreContainer']"
-          );
-          if (anchor) {
-            anchor.scrollIntoView({ block: "start", behavior: "smooth" });
-          }
-        });
-      }
-      
-      var auctionText = document.getElementById("auctionText");
-      if (auctionText) {
-        auctionText.addEventListener("click", function (e) {
-          // Please sync "Trang auction" to the project
-        });
-      }
-      
-      var signUpContainer = document.getElementById("signUpContainer");
-      if (signUpContainer) {
-        signUpContainer.addEventListener("click", function (e) {
-          // Please sync "Trang login" to the project
-        });
-      }
-      
-      var loginContainer = document.getElementById("loginContainer");
-      if (loginContainer) {
-        loginContainer.addEventListener("click", function (e) {
-          // Please sync "Trang login" to the project
-        });
-      }
-      
-      var sHOPALLContainer = document.getElementById("sHOPALLContainer");
-      if (sHOPALLContainer) {
-        sHOPALLContainer.addEventListener("click", function (e) {
-          // Please sync "ShopStrore" to the project
-        });
-      }
-      
-      var mINISKIRTContainer = document.getElementById("mINISKIRTContainer");
-      if (mINISKIRTContainer) {
-        mINISKIRTContainer.addEventListener("click", function (e) {
-          // Please sync "Trang mua hàng" to the project
-        });
-      }
-      </script>
-  </body>
+            </div>
+
+            <div class="row col-md-12" style="margin-top: 15px ; ">
+
+                <div class="card">
+                    <img src="./public/image-4@2x.png" class="card-img-top" alt="Product 2">
+                    <div class="card-body">
+                        <h5><span class="countdown badge bg-success" data-end-time="2025-07-14T12:00:00"
+                                style="position: absolute; top: 0; right: 0;"></span></h5>
+                        <h5 class="card-title">Product 2</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <p class="card-text">Giá: $75</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <p class="card-text text-center">Số lượt đấu giá: 5</p>
+                            <a href="#" class="btn btn-primary">Buy Now</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="./public/image-4@2x.png" class="card-img-top" alt="Product 2">
+                        <div class="card-body">
+                            <h5><span class="countdown badge bg-success" data-end-time="2025-07-14T12:00:00"
+                                    style="position: absolute; top: 0; right: 0;"></span></h5>
+                            <h5 class="card-title">Product 2</h5>
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            <p class="card-text">Giá: $75</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <p class="card-text text-center">Số lượt đấu giá: 5</p>
+                                <a href="#" class="btn btn-primary">Buy Now</a>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="./public/image-4@2x.png" class="card-img-top" alt="Product 2">
+                            <div class="card-body">
+                                <h5><span class="countdown badge bg-success" data-end-time="2025-07-14T12:00:00"
+                                        style="position: absolute; top: 0; right: 0;"></span></h5>
+                                <h5 class="card-title">Product 2</h5>
+                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                <p class="card-text">Giá: $75</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <p class="card-text text-center">Số lượt đấu giá: 5</p>
+                                    <a href="#" class="btn btn-primary">Buy Now</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <!-- example start 🤺🤺🤺🤺 -->
+
+
+            </div>
+            <footer class="container-fluid py-5 bg-dark" style="color: #f061a0;">
+                <div class="row">
+                    <div class="col-md-3">
+                        <h5 class="mb-3 ">Service-Hotline</h5>
+                        <p class="">Telefonische Beratung unter:</p>
+                        <p class=""><b>+49 (0) 771 / 175 131 69</b></p>
+                    </div>
+                    <div class="col-md-3">
+                        <h5 class="mb-3 ">Shop Service</h5>
+                        <ul class="list-unstyled ">
+                            <li><a href="#">AGB</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">Right of withdrawal</a></li>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">Shipping and payment terms</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3">
+                        <h5 class="mb-3 ">Informationen</h5>
+                        <ul class="list-unstyled ">
+                            <li><a href="#">Download area</a></li>
+                            <li><a href="#">Imprint</a></li>
+                            <li><a href="#">Data protection</a></li>
+                            <li><a href="#">Newsletter</a></li>
+                            <li><a href="#">Shipment</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3">
+                        <h5 class="mb-3 ">Our Company</h5>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <ul class="list-unstyled ">
+                                    <li><a href="#">About Us</a></li>
+                                    <li><a href="#">Contact</a></li>
+                                    <li><a href="#">Guarantee</a></li>
+                                </ul>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </footer>
+
+
+
+
+
+
+
+
+
+
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+                crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+                integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+                crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+                integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+                crossorigin="anonymous"></script>
+</body>
 </html>
