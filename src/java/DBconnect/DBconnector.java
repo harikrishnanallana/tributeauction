@@ -23,8 +23,8 @@ public class DBconnector {
     private String instance = "";
 
     private String dbName = "AuctionDB";
-    private String username = "niran";
-    private String password = "niran@123456";
+    private String username = "sa";
+    private String password = "061103";
     private String portNumber = "1433";
 
     public Connection conn;
